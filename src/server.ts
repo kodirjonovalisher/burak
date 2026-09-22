@@ -1,10 +1,5 @@
-// console.log("EXUCUATED");
-// console.log("EXUCUATED");
+import dotenv from "dotenv";
+dotenv.config();
 
-// import moment from "moment";
-
-// const currentTime = moment().format("YY DD MM");
-// console.log(currentTime);
-
-// const person: string = "ALEX";
-// const count: number = 100;
+// console.log("PORT:", process.env.PORT);
+// console.log(process.env.MONGO_URL)
