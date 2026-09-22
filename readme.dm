@@ -11,7 +11,7 @@
 
 
 // Architectural pattern: MVC, Dependency Injection(Nest.js), 
-// MVP -- butun bir backendni arxitekturasi yani suyagi hiobland: 
+// MVP -- butun bir backendni arxitekturasi yani suyagi hisobland: 
 //  ex. Architectural patter odamni butun suyagi bulsa design pattern qulining suyagi
 
 // MVC = MODEL VIEW  CONTROLLER
