@@ -32,3 +32,15 @@ console.log("Natija 2:", palindromCheck("alisher"));
 
 // console.log(getSquareNumbers([4, 7, 8, 15, 20, 60,]));
 // //console.log("HEllo world")
+
+
+/* Project Standards:
+ -Logging standards
+ -Naming standards
+    function, method, variable => CAMEL    goHome
+    class => PASCAL                        MemberService     
+    folder => KEBAB                         
+    css => SNAKE                           button_style
+
+    Error handling
+*/
