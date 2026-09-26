@@ -38,9 +38,12 @@ console.log("Natija 2:", palindromCheck("alisher"));
  -Logging standards
  -Naming standards
     function, method, variable => CAMEL    goHome
-    class => PASCAL                        MemberService     
-    folder => KEBAB                         
+    class => PASCAL                        MemberService
+    folder => KEBAB
     css => SNAKE                           button_style
 
     Error handling
 */
+
+// Get : qaysidir page ga kirish uchun yoki qaysidir malumotlarni olish uchun xizmat qiladi
+// Post : bu malumotlarni uzgartirish uchun yani mutation uchun
