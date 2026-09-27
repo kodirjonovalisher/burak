@@ -28,25 +28,25 @@ const memberScheme = new Schema({
         required: true,
     },
 
-    memeberPassword: {
+    memberPassword: {
         type: String,
         select: false,
         required: true,
     },
 
-    memeberAddress: {
+    memberAddress: {
         type: String,
     },
 
-    memeberDesc: {
+    memberDesc: {
         type: String,
     },
 
-    memeberImages: {
+    memberImages: {
         type: String,
     },
 
-    memeberPoints: {
+    memberPoints: {
         type: Number,
         default: 0,
     },

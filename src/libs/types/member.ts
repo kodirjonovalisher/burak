@@ -1,0 +1,31 @@
+import { MemberStatus, MemberType } from "../enums/member.enum";
+
+export interface Member {
+
+    memberType: MemberType;
+    memberStatus: MemberStatus;
+    memberNick: string;
+    memberPhone: string;
+    memberPassword?: string;
+    memberAddress?: string;
+    memberDesc?: string;
+    memberImages?: string;
+    memberPoints: number;
+    createdAt: Date;
+    updateaAt: Date
+
+}
+
+export interface MemberInput {
+
+    memberType?: MemberType;
+    memberStatus?: MemberStatus;
+    memberNick: string;
+    memberPhone: string;
+    memberPassword: string;
+    memberAddress?: string;
+    memeberDesc?: string;
+    memberImages?: string;
+    memberPoints?: number;
+
+}
