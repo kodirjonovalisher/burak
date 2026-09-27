@@ -1,20 +1,41 @@
-// MIT N- TASK
+// MIT O - TASK
 
-function palindromCheck(word: string) {
 
-    let reverse = "";
+function calculateSumofnumbers(arr: any[]) {
 
-    for (let a of word) {
+    let summa = 0;
 
-        reverse = a + reverse;
+    for (let a of arr) {
+
+        if (typeof a === "number") {
+
+            summa = a + summa;
+        }
     }
-
-    return word === reverse;
+    return summa;
 }
 
-console.log("Natija 1:", palindromCheck("aziza"));
+console.log(calculateSumofnumbers([20, "40", 53, "", "Alex", 47, "66"]))
 
-console.log("Natija 2:", palindromCheck("alisher"));
+
+
+// MIT N- TASK
+
+// function palindromCheck(word: string) {
+
+//     let reverse = "";
+
+//     for (let a of word) {
+
+//         reverse = a + reverse;
+//     }
+
+//     return word === reverse;
+// }
+
+// console.log("Natija 1:", palindromCheck("aziza"));
+
+// console.log("Natija 2:", palindromCheck("alisher"));
 
 // MIT M-TASK
 
