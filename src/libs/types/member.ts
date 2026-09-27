@@ -12,7 +12,8 @@ export interface Member {
     memberImages?: string;
     memberPoints: number;
     createdAt: Date;
-    updateaAt: Date
+    updatedAt: Date;
+
 
 }
 
