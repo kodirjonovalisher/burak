@@ -1,21 +1,41 @@
+// MIT P-TASK
+
+function objectToArray(obj: any) {
+    let arr = [];
+
+    for (let key in obj) {
+        arr.push([key, obj[key]]);
+
+
+    }
+
+    return arr;
+
+}
+
+console.log(objectToArray({ a: 34, b: 40, c: 60 }));
+
+
+
+
 // MIT O - TASK
 
 
-function calculateSumofnumbers(arr: any[]) {
+// function calculateSumofnumbers(arr: any[]) {
 
-    let summa = 0;
+//     let summa = 0;
 
-    for (let a of arr) {
+//     for (let a of arr) {
 
-        if (typeof a === "number") {
+//         if (typeof a === "number") {
 
-            summa = a + summa;
-        }
-    }
-    return summa;
-}
+//             summa = a + summa;
+//         }
+//     }
+//     return summa;
+// }
 
-console.log(calculateSumofnumbers([20, "40", 53, "", "Alex", 47, "66"]))
+// console.log(calculateSumofnumbers([20, "40", 53, "", "Alex", 47, "66"]))
 
 
 
