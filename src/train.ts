@@ -1,19 +1,36 @@
-// MIT P-TASK
+// MIT Q-TASK
 
-function objectToArray(obj: any) {
-    let arr = [];
+function hasProperty(obj: any, key: string) {
 
-    for (let key in obj) {
-        arr.push([key, obj[key]]);
-
-
-    }
-
-    return arr;
-
+    return key in obj;
 }
 
-console.log(objectToArray({ a: 34, b: 40, c: 60 }));
+console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "name"));  // true
+console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "age")); // true
+console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "work")); // false
+console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "salary")); // false
+
+
+
+
+
+
+// MIT P-TASK
+
+// function objectToArray(obj: any) {
+//     let arr = [];
+
+//     for (let key in obj) {
+//         arr.push([key, obj[key]]);
+
+
+//     }
+
+//     return arr;
+
+// }
+
+// console.log(objectToArray({ a: 34, b: 40, c: 60 }));
 
 
 
