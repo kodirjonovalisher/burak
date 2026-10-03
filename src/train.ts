@@ -1,14 +1,31 @@
-// MIT Q-TASK
+// MIT R-TASK
 
-function hasProperty(obj: any, key: string) {
+function calculate(str: string) {
 
-    return key in obj;
+    let summa = 0;
+    for (let a of str.split("+")) {
+        summa = summa + Number(a);
+        // summm += Number(a);
+    }
+    return summa;
 }
 
-console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "name"));  // true
-console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "age")); // true
-console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "work")); // false
-console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "salary")); // false
+console.log("Natija 1:", calculate("6+11+3+50")); // 70
+console.log("Natija 2:", calculate("33+67+60+40")); // 200
+
+
+
+// MIT Q-TASK
+
+// function hasProperty(obj: any, key: string) {
+
+//     return key in obj;
+// }
+
+// console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "name"));  // true
+// console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "age")); // true
+// console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "work")); // false
+// console.log(hasProperty({ name: "Alex", age: 28, city: "Fergana" }, "salary")); // false
 
 
 
