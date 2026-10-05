@@ -18,10 +18,15 @@ routerAdmin.get("/check-me", restuarantController.checkAuthSession);
 
 /** Product */
 
-routerAdmin.get("/product/all", productController.getAllProducts);
-routerAdmin
-    .post("/product/create", productController.createNewProduct)
-    .put("/product/:id", productController.updateChosenProduct);
+routerAdmin.get("/product/all",
+    restuarantController.verifyRestuarnat,
+    productController.getAllProducts);
+routerAdmin.post("/product/create",
+    restuarantController.verifyRestuarnat,
+    productController.createNewProduct);
+routerAdmin.post("/product/:id",
+    restuarantController.verifyRestuarnat,
+    productController.updateChosenProduct);
 
 
 /** Users */
