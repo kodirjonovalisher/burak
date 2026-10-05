@@ -1,3 +1,19 @@
+// MIT S-TASK
+function missingNumbers(arr: number[]) {
+
+   for (let i = 1; i <= arr.length; i++) {
+      if (!arr.includes(i)) {
+         return i;
+      }
+   }
+
+}
+
+
+console.log(missingNumbers([1, 2, 4,]));
+console.log(missingNumbers([1, 2, 3, 4, 6]));
+
+
 
 
 
