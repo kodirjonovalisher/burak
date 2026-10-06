@@ -3,7 +3,7 @@ import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import { Message } from "../libs/Errors";
+import Errors, { HttpCode, Message } from "../libs/Errors";
 
 const memberService = new MemberService();
 
@@ -46,9 +46,14 @@ restuarantController.getLogin = (req: Request, res: Response) => {
 restuarantController.processSignup = async (req: AdminRequest, res: Response) => {
     try {
         console.log("processSignup");
+        const file = req.file;
+        if (!file)
+            throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
+
 
 
         const newMember: MemberInput = req.body;
+        newMember.memberImages = file?.path;
         newMember.memberType = MemberType.RESTUARANT;
         const result = await memberService.processSignup(newMember);
 
@@ -56,7 +61,7 @@ restuarantController.processSignup = async (req: AdminRequest, res: Response) =>
 
         req.session.member = result;
         req.session.save(function () {
-            res.send(result);
+            res.redirect("/admin/product/all");
         });
 
 
@@ -81,7 +86,7 @@ restuarantController.processLogin = async (req: AdminRequest, res: Response) => 
         // TODO: SESSIONS AUTHUCATION
         req.session.member = result;
         req.session.save(function () {
-            res.send(result);
+            res.redirect("/admin/product/all");
         });
 
 

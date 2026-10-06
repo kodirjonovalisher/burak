@@ -39,3 +39,4 @@ export default makeUploader;
 
 export const uploadProductImage = multer({ storage: product_storage });
 */
+
