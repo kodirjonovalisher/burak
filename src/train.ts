@@ -1,19 +1,36 @@
+//MIT T-TASK
+
+function mergeSortedArrays(a: number[], b: number[]) {
+
+   let arr = [...a, ...b];
+
+   arr.sort((a, b) => a - b);
+
+   return arr;
+}
+
+console.log("Natija:", mergeSortedArrays([4, 6, 2, 26, 9, 1, -3, -7], [5, 18, 35, 98, 100, 11, -1, 0]));
+
+
+
+
+
 // MIT S-TASK
 
 
-function missingNumbers(arr: number[]) {
+// function missingNumbers(arr: number[]) {
 
-   for (let i = 1; i <= arr.length; i++) {
-      if (!arr.includes(i)) {
-         return i;
-      }
-   }
+//    for (let i = 1; i <= arr.length; i++) {
+//       if (!arr.includes(i)) {
+//          return i;
+//       }
+//    }
 
-}
+// }
 
 
-console.log(missingNumbers([1, 2, 4,]));
-console.log(missingNumbers([1, 2, 3, 4, 6]));
+// console.log(missingNumbers([1, 2, 4,]));
+// console.log(missingNumbers([1, 2, 3, 4, 6]));
 
 
 
@@ -128,13 +145,6 @@ console.log(missingNumbers([1, 2, 3, 4, 6]));
 
 // console.log(getSquareNumbers([4, 7, 8, 15, 20, 60,]));
 // //console.log("HEllo world")
-
-
-
-
-
-
-
 
 
 /* Project Standards:
