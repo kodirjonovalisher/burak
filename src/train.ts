@@ -1,15 +1,33 @@
-//MIT T-TASK
+// MIT U-TASK
 
-function mergeSortedArrays(a: number[], b: number[]) {
+function sumOdds(num: number) {
+   let count = 0;
 
-   let arr = [...a, ...b];
-
-   arr.sort((a, b) => a - b);
-
-   return arr;
+   for (let i = 1; i <= num; i += 2) {
+      count++;
+   }
+   return count;
 }
 
-console.log("Natija:", mergeSortedArrays([4, 6, 2, 26, 9, 1, -3, -7], [5, 18, 35, 98, 100, 11, -1, 0]));
+console.log("Natija1:", sumOdds(15));
+console.log("Natija2:", sumOdds(9));
+console.log("Natija3:", sumOdds(11));
+console.log("Natija4:", sumOdds(3));
+
+
+
+//MIT T-TASK
+
+// function mergeSortedArrays(a: number[], b: number[]) {
+
+//    let arr = [...a, ...b];
+
+//    arr.sort((a, b) => a - b);
+
+//    return arr;
+// }
+
+// console.log("Natija:", mergeSortedArrays([4, 6, 2, 26, 9, 1, -3, -7], [5, 18, 35, 98, 100, 11, -1, 0]));
 
 
 
