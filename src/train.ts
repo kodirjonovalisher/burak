@@ -1,18 +1,35 @@
-// MIT U-TASK
+// MIT V_TASK
 
-function sumOdds(num: number) {
-   let count = 0;
+function countChars(str: string) {
+   let object: any = {};
+   for (let a of str) {
+      object[a] = (object[a] || 0) + 1;
 
-   for (let i = 1; i <= num; i += 2) {
-      count++;
    }
-   return count;
+   return object;
 }
 
-console.log("Natija1:", sumOdds(15));
-console.log("Natija2:", sumOdds(9));
-console.log("Natija3:", sumOdds(11));
-console.log("Natija4:", sumOdds(3));
+console.log("Result1:", countChars("kodirjonov"));
+console.log("Result2:", countChars("aziza"));
+
+
+
+
+// MIT U-TASK
+
+// function sumOdds(num: number) {
+//    let count = 0;
+
+//    for (let i = 1; i <= num; i += 2) {
+//       count++;
+//    }
+//    return count;
+// }
+
+// console.log("Natija1:", sumOdds(15));
+// console.log("Natija2:", sumOdds(9));
+// console.log("Natija3:", sumOdds(11));
+// console.log("Natija4:", sumOdds(3));
 
 
 
