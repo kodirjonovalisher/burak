@@ -68,7 +68,7 @@
                         <%= value.memberPhone %>
                       </td>
                       <td style="width: 13%">
-                        <select class="spec-select member-status" id="<%+ value.id %>">
+                        <select class="spec-select member-status" id="<%= value.id %>">
                           <option value="ACTIVE" <%=value.memberStatus==='ACTIVE' ? 'selected' : '' %> >ACTIVE</option>
                           <option value="BLOCK" <%=value.memberStatus==='BLOCK' ? 'selected' : '' %>>BLOCK</option>
                           <option value="DELETE" <%=value.memberStatus==='ACTIVE' ? 'selected' : '' %>>DELETE</option>
