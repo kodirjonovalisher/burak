@@ -39,7 +39,7 @@ memberController.login = async (req: Request, res: Response) => {
 
     } catch (err) {
         console.log("Error processLogin:", err);
-        // res.json({ error: err });
+        res.json({ error: err });
     }
 };
 
