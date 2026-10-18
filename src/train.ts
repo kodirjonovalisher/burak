@@ -1,16 +1,33 @@
-// MIT V_TASK
+// MIT W-TASK
 
-function countChars(str: string) {
-   let object: any = {};
-   for (let a of str) {
-      object[a] = (object[a] || 0) + 1;
+function chunkArray(arr: number[], number: number) {
+   let result = [];
 
+   while (arr.length) {
+      result.push(arr.splice(0, number));
    }
-   return object;
+
+   return result;
 }
 
-console.log("Result1:", countChars("kodirjonov"));
-console.log("Result2:", countChars("aziza"));
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 5));
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+
+
+
+// MIT V_TASK
+
+// function countChars(str: string) {
+//    let object: any = {};
+//    for (let a of str) {
+//       object[a] = (object[a] || 0) + 1;
+
+//    }
+//    return object;
+// }
+
+// console.log("Result1:", countChars("kodirjonov"));
+// console.log("Result2:", countChars("aziza"));
 
 
 
