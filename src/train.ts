@@ -1,17 +1,32 @@
-// MIT W-TASK
+// MIT 
 
-function chunkArray(arr: number[], number: number) {
-   let result = [];
+function count(obj: any, str: string) {
+   let a = 0;
+   for (let b in obj) {
+      if (b === str) a++;
 
-   while (arr.length) {
-      result.push(arr.splice(0, number));
+      if (obj[b] && typeof obj[b] === "object")
+         a += count(obj[b], str);
    }
-
-   return result;
+   return a;
 }
 
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 5));
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+console.log(count({ model: "Malibu", steer: { model: "Michchelen", size: 19 } }, "model"));
+
+// MIT W-TASK
+
+// function chunkArray(arr: number[], number: number) {
+//    let result = [];
+
+//    while (arr.length) {
+//       result.push(arr.splice(0, number));
+//    }
+
+//    return result;
+// }
+
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 5));
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
 
 
