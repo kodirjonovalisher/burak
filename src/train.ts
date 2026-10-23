@@ -1,17 +1,34 @@
+// MIT   Y-TASK
+
+function findInterSection(arr1: number[], arr2: number[]) {
+
+   let result = [];
+   for (let x of arr1) {
+      if (arr2.includes(x)) {
+         result.push(x);
+      }
+   }
+   return result;
+}
+console.log("Natija1:", findInterSection([4, 6, 9, 3], [13, 4, 3, 7]));
+console.log("Natija2:", findInterSection([11, 14, 15, 16], [20, 16, 11, 14]));
+
+
+
 // MIT 
 
-function count(obj: any, str: string) {
-   let a = 0;
-   for (let b in obj) {
-      if (b === str) a++;
+// function count(obj: any, str: string) {
+//    let a = 0;
+//    for (let b in obj) {
+//       if (b === str) a++;
 
-      if (obj[b] && typeof obj[b] === "object")
-         a += count(obj[b], str);
-   }
-   return a;
-}
+//       if (obj[b] && typeof obj[b] === "object")
+//          a += count(obj[b], str);
+//    }
+//    return a;
+// }
 
-console.log(count({ model: "Malibu", steer: { model: "Michchelen", size: 19 } }, "model"));
+// console.log(count({ model: "Malibu", steer: { model: "Michchelen", size: 19 } }, "model"));
 
 // MIT W-TASK
 
