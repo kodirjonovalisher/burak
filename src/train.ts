@@ -1,17 +1,32 @@
-// MIT   Y-TASK
-
-function findInterSection(arr1: number[], arr2: number[]) {
-
-   let result = [];
-   for (let x of arr1) {
-      if (arr2.includes(x)) {
-         result.push(x);
+// MIT Z-TASK
+function sumEvens(numbers: number[]) {
+   let sum = 0;
+   for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] % 2 === 0) {
+         sum += numbers[i];
       }
    }
-   return result;
+   return sum;
 }
-console.log("Natija1:", findInterSection([4, 6, 9, 3], [13, 4, 3, 7]));
-console.log("Natija2:", findInterSection([11, 14, 15, 16], [20, 16, 11, 14]));
+console.log("Result1:", sumEvens([4, 5, 6, 10]));
+console.log("Result2:", sumEvens([2, 2, 8, 20, 7, 11, 15, 17]));
+
+
+
+// MIT   Y-TASK
+
+// function findInterSection(arr1: number[], arr2: number[]) {
+
+//    let result = [];
+//    for (let x of arr1) {
+//       if (arr2.includes(x)) {
+//          result.push(x);
+//       }
+//    }
+//    return result;
+// }
+// console.log("Natija1:", findInterSection([4, 6, 9, 3], [13, 4, 3, 7]));
+// console.log("Natija2:", findInterSection([11, 14, 15, 16], [20, 16, 11, 14]));
 
 
 
