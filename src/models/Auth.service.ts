@@ -26,11 +26,27 @@ class AuthService {
     }
 
     public async checkAuth(token: string): Promise<Member> {
-        const result: Member = (await jwt.verify(token, this.secretToken) as Member)
+        try {
+            const result = await jwt.verify(token, this.secretToken) as Member;
 
-        console.log(`---- [AUTH ] memberNick: ${result.memberNick}---`);
-        return result;
+            console.log(`---- [AUTH] memberNick: ${result.memberNick} ---`);
+
+            return result;
+
+        } catch (err) {
+            console.log("JWT verification failed:", err);
+
+            throw new Errors(HttpCode.UNAUTHORIZED, Message.NOT_AUTHENTICATED);
+        }
     }
+
+    //      public async checkAuth(token: string): Promise<Member> {
+    //         const result: Member = (await jwt.verify(token, this.secretToken) as Member)
+
+    //         console.log(`---- [AUTH] memberNick: ${result.memberNick}---`);
+    //         return result;
+    //     }
+    // }
 }
 
 export default AuthService;
