@@ -29,15 +29,17 @@ orderController.getMyOrders = async (req: ExtendedRequest, res: Response) => {
         console.log("getMyOrders");
         const { page, limit, orderStatus } = req.query;
         console.log("req.query:", req.query);
+        const parsedPage = Number(page);
+        const parsedLimit = Number(limit);
         const inquiry: OrderInquiry = {
-            page: Number(page),
-            limit: Number(limit),
+            page: Number.isInteger(parsedPage) && parsedPage > 0 ? parsedPage : 1,
+            limit: Number.isInteger(parsedLimit) && parsedLimit > 0 ? parsedLimit : 10,
             orderStatus: orderStatus as OrderStatus,
         };
         console.log("inquiry:", inquiry);
         const result = await orderService.getMyOrders(req.member, inquiry);
 
-        res.status(HttpCode.CREATED).json(result);
+        res.status(HttpCode.OK).json(result);
     } catch (err) {
         console.log("Error, getMyOrders:", err);
         if (err instanceof Errors) res.status(err.code).json(err);

@@ -3,10 +3,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log("EXUCUATED");
-console.log("EXUCUATED");
-const moment_1 = __importDefault(require("moment"));
-const currentTime = (0, moment_1.default)().format("YY DD MM");
-console.log(currentTime);
-const person = "ALEX";
-const count = 100;
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const mongoose_1 = __importDefault(require("mongoose"));
+const app_1 = __importDefault(require("./app"));
+mongoose_1.default
+    .connect(process.env.MONGO_URL, {})
+    .then((data) => {
+    console.log("MongoDB connected succeed ");
+    const PORT = process.env.PORT ?? 3003;
+    app_1.default.listen(PORT, function () {
+        console.info(`The server is running succssesfully on port ${PORT}`);
+        console.info(`Admin project on http://localhost:${PORT}/admin \n`);
+    });
+})
+    .catch(err => console.log("ERROR on connection MongoDB", err));

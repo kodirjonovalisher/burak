@@ -11,7 +11,6 @@ export interface OrderItem {
     createdAt: Date;
     updatedAt: Date;
     //**from aggregations */
-    orderItems: OrderItem[];
     productData: Product[];
 }
 
@@ -23,6 +22,7 @@ export interface Order {
     memberId: ObjectId;
     createdAt: Date;
     updatedAt: Date;
+    orderItems: OrderItem[];
 }
 
 export interface OrderItemInput {

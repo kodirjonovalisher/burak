@@ -75,25 +75,29 @@ class OrderService {
         const result = await this.orderModel
             .aggregate([
                 { $match: matches },
-                { $sort: { updateAt: -1 } },
+                { $sort: { updatedAt: -1 } },
                 { $skip: (inquiry.page - 1) * inquiry.limit },
                 { $limit: inquiry.limit },
                 {
                     $lookup: {
                         from: "orderItems",
-                        localField: "_id",
-                        foreignField: "orderId",
+                        let: { orderId: "$_id" },
+                        pipeline: [
+                            { $match: { $expr: { $eq: ["$orderId", "$$orderId"] } } },
+                            {
+                                $lookup: {
+                                    from: "products",
+                                    let: { productId: "$productId" },
+                                    pipeline: [
+                                        { $match: { $expr: { $eq: ["$_id", "$$productId"] } } },
+                                    ],
+                                    as: "productData",
+                                },
+                            },
+                        ],
                         as: "orderItems",
                     },
                 },
-                {
-                    $lookup: {
-                        from: "products",
-                        localField: "orderItems.productId",
-                        foreignField: "_id",
-                        as: "productData"
-                    }
-                }
             ])
             .exec();
 
